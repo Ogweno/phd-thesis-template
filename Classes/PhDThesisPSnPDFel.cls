@@ -894,6 +894,9 @@ wish to left align your text}
 % Author (title page)
 \newcommand{\@authortou}{}
 \newcommand{\authortou}[1]{\renewcommand{\@authortou}{#1}}
+% Diploma
+\newcommand{\@diploma}{}
+\newcommand{\diploma}[1]{\renewcommand{\@diploma}{#1}}
 
 % Supervisor (optional)
 \newcommand{\@supervisor}{}
@@ -1096,6 +1099,7 @@ wish to left align your text}
 \thispagestyle{empty}
 \centering
 }
+
 
 % ********************************* Dedication *********************************
 % The dedication environment makes sure the dedication gets its
@@ -1391,7 +1395,7 @@ wish to left align your text}
 \begin{lrbox}{\PHD@author}
   \begin{minipage}[c]{\textwidth}
     \centering \large \textbf{\@authortou}\\
-    \centering \normalsize{Διπλωματούχου Αγρονόμου Τοπογράφου Μηχανικού Ε.Μ.Π.}
+    \centering \normalsize{\@diploma}
   \end{minipage}
 \end{lrbox}
 
