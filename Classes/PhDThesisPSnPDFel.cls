@@ -935,9 +935,9 @@ wish to left align your text}
 \newcommand{\@dept}{}
 \newcommand{\dept}[1]{\renewcommand{\@dept}{#1}}
 
-% The name of your college (eg. King's)
-\newcommand{\@college}{}
-\newcommand{\college}[1]{\renewcommand{\@college}{#1}}
+% The name of your university city (eg. King's)
+\newcommand{\@city}{}
+\newcommand{\city}[1]{\renewcommand{\@city}{#1}}
 
 % The name of your University
 \newcommand{\@university}{}
@@ -1059,7 +1059,7 @@ wish to left align your text}
 
 % College and degree date
 \vfill
-{\usebox{\PHD@collegedate}}
+{\usebox{\PHD@citydate}}
 \end{singlespace}
 }
 % ***************************** Title Page Inside ******************************
@@ -1082,7 +1082,7 @@ wish to left align your text}
 % ******************************** Title Page Inside ***************************
 \newcommand{\maketitlepageIn}{
 
-\vskip-7cm
+\vskip-6.3cm
 
 % To compute the free vertical space in Title page
 \computeInTitlePageSpacing
@@ -1120,7 +1120,7 @@ wish to left align your text}
 \vspace{.2\PHD@titlepageInspacing}
 
 
-{\usebox{\PHD@collegedateIn}}
+{\usebox{\PHD@citydateIn}}
 
 \end{center}
 
@@ -1196,15 +1196,15 @@ wish to left align your text}
 \end{lrbox}
 
 % College and Date Box
-\newsavebox{\PHD@collegedateIn}
-\begin{lrbox}{\PHD@collegedateIn}
+\newsavebox{\PHD@citydateIn}
+\begin{lrbox}{\PHD@citydateIn}
 \begin{minipage}[c]{0.95\textwidth}
   \large
-  \ifthenelse{\equal{\@college}{}}{
+  \ifthenelse{\equal{\@city}{}}{
     % college is not defined
     \@degreedate
   }{
-    \centering \large \textbf{\@college, \@degreedate}
+    \centering \large \textbf{\@city, \@degreedate}
   } % college is defined
 \end{minipage}
 \end{lrbox}
@@ -1256,7 +1256,7 @@ wish to left align your text}
 			- \totalheightof{\usebox{\PHD@examinetabIn}}
 			- \totalheightof{\usebox{\PHD@authorIn}}
 %			- \totalheightof{\usebox{\PHD@supervisor}}
-			- \totalheightof{\usebox{\PHD@collegedateIn}}
+			- \totalheightof{\usebox{\PHD@citydateIn}}
 %
 }
 }
@@ -1584,15 +1584,15 @@ wish to left align your text}
 \end{lrbox}
 
 % College and Date Box
-\newsavebox{\PHD@collegedate}
-\begin{lrbox}{\PHD@collegedate}
+\newsavebox{\PHD@citydate}
+\begin{lrbox}{\PHD@citydate}
 \begin{minipage}[c]{0.95\textwidth}
   \large
-  \ifthenelse{\equal{\@college}{}}{
+  \ifthenelse{\equal{\@city}{}}{
     % college is not defined
     \@degreedate
   }{
-    \centering \large \textbf{\@college, \@degreedate}
+    \centering \large \textbf{\@city, \@degreedate}
   } % college is defined
 \end{minipage}
 \end{lrbox}
@@ -1617,7 +1617,7 @@ wish to left align your text}
 			- \totalheightof{\usebox{\PHD@submission}}
 			- \totalheightof{\usebox{\PHD@author}}
 			- \totalheightof{\usebox{\PHD@supervisor}}
-			- \totalheightof{\usebox{\PHD@collegedate}}
+			- \totalheightof{\usebox{\PHD@citydate}}
 }
 }
 
