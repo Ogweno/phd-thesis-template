@@ -891,9 +891,30 @@ wish to left align your text}
 % These macros are used to declare arguments needed for the
 % construction of the title page and other preamble.
 
+% Author (title page)
+\newcommand{\@authortou}{}
+\newcommand{\authortou}[1]{\renewcommand{\@authortou}{#1}}
+
 % Supervisor (optional)
 \newcommand{\@supervisor}{}
 \newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{#1}}
+%advisors
+\newcommand{\@advisora}{}
+\newcommand{\advisora}[1]{\renewcommand{\@advisora}{#1}}
+\newcommand{\@advisorb}{}
+\newcommand{\advisorb}[1]{\renewcommand{\@advisorb}{#1}}
+\newcommand{\@advisorc}{}
+\newcommand{\advisorc}[1]{\renewcommand{\@advisorc}{#1}}
+%examiners
+\newcommand{\@examinerd}{}
+\newcommand{\examinerd}[1]{\renewcommand{\@examinerd}{#1}}
+\newcommand{\@examinere}{}
+\newcommand{\examinere}[1]{\renewcommand{\@examinere}{#1}}
+\newcommand{\@examinerf}{}
+\newcommand{\examinerf}[1]{\renewcommand{\@examinerf}{#1}}
+\newcommand{\@examinerg}{}
+\newcommand{\examinerg}[1]{\renewcommand{\@examinerg}{#1}}
+
 
 % Subtitle (optional)
 \newcommand{\@subtitle}{}
@@ -1262,6 +1283,7 @@ wish to left align your text}
   \begin{center}
     { \Large {\bfseries {\@title}} \par}
     {{\large \vspace*{1em} \@author} \par}
+    {\@keywords \par}
   \end{center}
 \else
 % Normal abstract in the thesis
@@ -1368,19 +1390,10 @@ wish to left align your text}
 \newsavebox{\PHD@author}
 \begin{lrbox}{\PHD@author}
   \begin{minipage}[c]{\textwidth}
-    \centering \large \textbf{ΔΗΜΗΤΡΙΟΥ Γ. ΑΝΑΣΤΑΣΙΟΥ}\\
+    \centering \large \textbf{\@authortou}\\
     \centering \normalsize{Διπλωματούχου Αγρονόμου Τοπογράφου Μηχανικού Ε.Μ.Π.}
   \end{minipage}
 \end{lrbox}
-
-% Department Box
-% \newsavebox{\PHD@dept}
-% \begin{lrbox}{\PHD@dept}
-%   \begin{minipage}[c]{\textwidth}
-%     \centering {\large \@university \par}
-% 	       {\large \@dept \par}
-%   \end{minipage}
-% \end{lrbox}
 
 % Crest Dept box
 \newsavebox{\PHD@crdept}
@@ -1390,8 +1403,8 @@ wish to left align your text}
 \includegraphics[width=.98\textwidth]{ntua.png}}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.87\textwidth}
-      \centering \vspace*{0.01cm}{\Large \textbf{ΕΘΝΙΚΟ ΜΕΤΣΟΒΙΟ ΠΟΛΥΤΕΧΝΕΙΟ} \par}
-\vspace*{0.2cm}  {\large \textbf{ΣΧΟΛΗ ΑΓΡΟΝΟΜΩΝ \& ΤΟΠΟΓΡΑΦΩΝ ΜΗΧΑΝΙΚΩΝ} \par}
+      \centering \vspace*{0.01cm}{\Large \textbf{\@university} \par}
+\vspace*{0.2cm}  {\large \textbf{\@dept} \par}
 \vspace*{0.4cm}
 \end{minipage}
 \end{lrbox}
@@ -1416,13 +1429,6 @@ wish to left align your text}
     % college is not defined
     \@degreedate
   }{
-%     % college is defined
-%     \begin{minipage}[b]{0.49\textwidth}
-%       \flushleft\@college
-%     \end{minipage}
-%     \begin{minipage}[b]{0.49\textwidth}
-%       \flushright \@degreedate
-%     \end{minipage}
     \centering \large \textbf{\@college, \@degreedate}
   } % college is defined
 \end{minipage}
@@ -1432,6 +1438,7 @@ wish to left align your text}
 \newsavebox{\PHD@supervisor}
 \begin{lrbox}{\PHD@supervisor}
   \begin{minipage}[l]{\textwidth}
+    \large\textbf{ΕΠΙΒΛΕΠΩΝ:}\\
     \large{\@supervisor}
   \end{minipage}
 \end{lrbox}
