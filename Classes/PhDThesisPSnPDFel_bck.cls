@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                            %%
-%% Class ``PhD Thesis PSnPDF el``                                             %%
+%% Class ``PhD Thesis PSnPDF el                                               %%
 %%                                                                            %%
 %% A PhD thesis LaTeX template for NTUA - updated from CUED                   %%
 %%                                                                            %%
@@ -1034,6 +1034,25 @@ wish to left align your text}
 	\vspace{.15\PHD@titlepagespacing}
 \fi
 
+% Title
+% {\usebox{\PHD@Title}} % subtitle is defined
+
+% % Department and University
+% {\usebox{\PHD@dept}}
+% \vspace{.02\PHD@titlepagespacing}
+%
+% % Crest
+%
+% \ifPHD@collegeshield%
+% 	\vspace{.15\PHD@titlepagespacing}
+% 	{\usebox{\PHD@collegecrest}}
+% 	\vspace{.15\PHD@titlepagespacing}
+% \else
+% 	\vspace{.1\PHD@titlepagespacing}
+% 	{\usebox{\PHD@crest}}
+% 	\vspace{.15\PHD@titlepagespacing}
+% \fi
+
 % CREST DEPARTMENT TITLE
 {\usebox{\PHD@crdept}}
 \vspace{.3\PHD@titlepagespacing}
@@ -1054,6 +1073,12 @@ wish to left align your text}
 %supervisor
 {\usebox{\PHD@supervisor}}
 
+% Department and University
+% {\usebox{\PHD@dept}}
+% \vspace{.2\PHD@titlepagespacing}
+
+% Submission Text
+% {\usebox{\PHD@submission}}
 
 \end{center}
 
@@ -1075,191 +1100,6 @@ wish to left align your text}
 \centering
 }
 
-
-
-
-
-% ******************************** Title Page Inside ***************************
-\newcommand{\maketitlepageIn}{
-
-\vskip-7cm
-
-% To compute the free vertical space in Title page
-\computeInTitlePageSpacing
-
-% Fix for issue #24 https://github.com/kks32/phd-thesis-template/issues/24
-\renewcommand*{\thepage}{i}
-
-\begin{singlespace}
-\begin{center}
-
-%% University Crest Long if college crest is defined
-%	{\usebox{\PHD@crestIn}}
-%	\vspace{.15\PHD@titlepagespacing}
-
-
-% CREST DEPARTMENT TITLE
-{\usebox{\PHD@crdeptIn}}
-\vspace{.3\PHD@titlepageInspacing}
-
-% Title
-{\usebox{\PHD@TitleIn}} % subtitle is defined
-\vspace{.2\PHD@titlepageInspacing}
-
-% Submission Text
-{\usebox{\PHD@submissionIn}}
-\vspace{.01\PHD@titlepageInspacing}
-
-% Author
-{\usebox{\PHD@authorIn}}
-% \vspace*{1em}
-\vspace{.2\PHD@titlepageInspacing}
-
-%supervisor
-{\usebox{\PHD@examinetabIn}}
-\vspace{.2\PHD@titlepageInspacing}
-
-
-{\usebox{\PHD@collegedateIn}}
-
-\end{center}
-
-% College and degree date
-%\vfill
-%{\usebox{\PHD@collegedateIn}}
-\end{singlespace}
-}
-
-\newcommand{\computeInTitlePageSpacing}{
-
-
-% Title Box
-\newsavebox{\PHD@TitleIn}
-\begin{lrbox}{\PHD@TitleIn}
-  \begin{minipage}[c]{0.98\textwidth}
-    \centering \Large \bfseries{\@title}
-    \ifthenelse{\equal{\@subtitle}{}}{
-      % subtitle is not defined
-    }{
-      \\
-      \centering \Large {\@subtitle}
-    } % subtitle is defined
-  \end{minipage}
-\end{lrbox}
-
-% % University Crest Box
-% \newsavebox{\PHD@crest}
-% \begin{lrbox}{\PHD@crest}
-%   {\@crest \par}
-% \end{lrbox}
-%
-% \newsavebox{\PHD@collegecrest}
-% \begin{lrbox}{\PHD@collegecrest}
-%   \ifPHD@collegeshield%
-%     {\@collegeshield}
-%   \else
-%     % College shield is undefined
-%   \fi
-% \end{lrbox}
-
-% Author Box
-\newsavebox{\PHD@authorIn}
-\begin{lrbox}{\PHD@authorIn}
-  \begin{minipage}[c]{\textwidth}
-    \centering \large \textbf{\@authortou}\\
-    \centering \normalsize{\@diploma}
-  \end{minipage}
-\end{lrbox}
-
-% Crest Dept box
-\newsavebox{\PHD@crdeptIn}
-\begin{lrbox}{\PHD@crdeptIn}
-\begin{minipage}[t]{0.13\textwidth}
-\centering\raisebox{\dimexpr \topskip-\height}{\@crest}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.87\textwidth}
-      \centering \vspace*{0.01cm}{\Large \textbf{\@university} \par}
-\vspace*{0.2cm}  {\large \textbf{\@dept} \par}
-\vspace*{0.4cm}
-\end{minipage}
-\end{lrbox}
-
-% Submission Box
-\newsavebox{\PHD@submissionIn}
-\begin{lrbox}{\PHD@submissionIn}
-  \begin{minipage}[c]{\textwidth}
-    \begin{center}
-%       \large \submissiontext \par
-      \large {\@degreetitle} \par
-    \end{center}
-  \end{minipage}
-\end{lrbox}
-
-% College and Date Box
-\newsavebox{\PHD@collegedateIn}
-\begin{lrbox}{\PHD@collegedateIn}
-\begin{minipage}[c]{0.95\textwidth}
-  \large
-  \ifthenelse{\equal{\@college}{}}{
-    % college is not defined
-    \@degreedate
-  }{
-    \centering \large \textbf{\@college, \@degreedate}
-  } % college is defined
-\end{minipage}
-\end{lrbox}
-
-% Supervisor Box
-\newsavebox{\PHD@examinetabIn}
-\begin{lrbox}{\PHD@examinetabIn}
-%  \begin{minipage}[l]{\textwidth}
-\begin{minipage}[t]{0.52\textwidth}\small{ %\normalsize{
-    {\bf ΤΡΙΜΕΛΗΣ ΣΥΜΒΟΥΛΕΥΤΙΚΗ\\ ΕΠΙΤΡΟΠΗ:} \par
-      
-      1. \@advisora (Επιβλέπων)
-      
-      2. \@advisorb
-      
-      3. \@advisorc
-      }
-    \end{minipage}
-     \begin{minipage}[t]{0.47\textwidth}\small{ %\normalsize{
-    {\bf  ΕΠΤΑΜΕΛΗΣ ΕΞΕΤΑΣΤΙΚΗ\\ ΕΠΙΤΡΟΠΗ:} \par
-      1. \@advisora
-      
-      2. \@advisorb
-      
-      3. \@advisorc
-    
-      4. \@examinerd
-      
-      5. \@examinere
-      
-      6. \@examinerf
-      
-      7. \@examinerg
-      }
-    \end{minipage}
-
-
-%  \end{minipage}
-\end{lrbox}
-
-%  Now to compute the free vertical space
-\newlength{\PHD@titlepageInspacing}
-\setlength{\PHD@titlepageInspacing}{ \textheight %
-% 			- \totalheightof{\usebox{\PHD@dept}}
-% 			- \totalheightof{\usebox{\PHD@crest}}
-      - \totalheightof{\usebox{\PHD@crdeptIn}}
-% 			- \totalheightof{\usebox{\PHD@collegecrest}}
-			- \totalheightof{\usebox{\PHD@TitleIn}}
-			- \totalheightof{\usebox{\PHD@examinetabIn}}
-			- \totalheightof{\usebox{\PHD@authorIn}}
-%			- \totalheightof{\usebox{\PHD@supervisor}}
-			- \totalheightof{\usebox{\PHD@collegedateIn}}
-%
-}
-}
 
 % ********************************* Dedication *********************************
 % The dedication environment makes sure the dedication gets its
@@ -1563,7 +1403,8 @@ wish to left align your text}
 \newsavebox{\PHD@crdept}
 \begin{lrbox}{\PHD@crdept}
 \begin{minipage}[t]{0.13\textwidth}
-\centering\raisebox{\dimexpr \topskip-\height}{\@crest}
+\centering\raisebox{\dimexpr \topskip-\height}{%
+\includegraphics[width=.98\textwidth]{ntua.png}}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.87\textwidth}
       \centering \vspace*{0.01cm}{\Large \textbf{\@university} \par}
@@ -1620,4 +1461,3 @@ wish to left align your text}
 			- \totalheightof{\usebox{\PHD@collegedate}}
 }
 }
-
