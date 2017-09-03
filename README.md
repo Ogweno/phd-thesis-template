@@ -4,21 +4,25 @@ PhD thesis template for NTUA
 
 > Forked from https://github.com/kks32/phd-thesis-template
 
+[![License MIT](http://img.shields.io/badge/license-MIT-brightgreen.svg)](license.md)
+[![Version](http://img.shields.io/badge/version-2.3.1_NTUA_el-brightgreen.svg)](https://github.com/kks32/phd-thesis-template/releases/latest)
 
 ## Features added on NTUA version
 
 *   Conforms to the [NTUA PhD guidlines][ntuaguide]
 *   Support Greek language and greek fonts (GFS)
 *   Package ``\bicaption`` added to support two languages.
-*   
-*   
-*   
-*   
+*   Title page and second page (inside) with advisors and examiners.
+*   Resume/short CV at the end of the template.
+*   Lit of todo notes in Draft mode.
+*   Extended Summary option print extended summary as seperated article. 
 
 ## Developer for NTUA version
 *   Demitris G. Anastasiou
 
+Many thanks to Krishna Kumar and the contribution team for the original template of CUED.
 
+Here is the original Readme.md file
 
 --------------------------------------------------------------------------------
 
