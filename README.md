@@ -1,3 +1,27 @@
+PhD thesis template for NTUA
+============================
+> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for National Technical University of AThens.
+
+> Forked from https://github.com/kks32/phd-thesis-template
+
+
+## Features added on NTUA version
+
+*   Conforms to the [NTUA PhD guidlines][ntuaguide]
+*   Support Greek language and greek fonts (GFS)
+*   Package ``\bicaption`` added to support two languages.
+*   
+*   
+*   
+*   
+
+## Developer for NTUA version
+*   Demitris G. Anastasiou
+
+
+
+--------------------------------------------------------------------------------
+
 CUED PhD thesis template
 ========================
 
@@ -531,3 +555,5 @@ The history of releases can be viewed at [ChangeLog](ChangeLog.md)
 *   Tina Schwamb - testing and bug reports
 
 *   John Plaice - Bug fixes
+
+[ntuaguide]: <http://www.survey.ntua.gr/files/secr_announcements/metaptyxiakes/morfi_dd_siglitoses.pdf>
