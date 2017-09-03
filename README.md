@@ -1,5 +1,7 @@
-PhD thesis template for NTUA
+PhD thesis template for NTUA 
 ============================
+NOT an official template
+
 > A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for National Technical University of AThens.
 
 > Forked from https://github.com/kks32/phd-thesis-template
