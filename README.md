@@ -2,31 +2,33 @@ PhD thesis template for NTUA
 ============================
 NOT an official template
 
-> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for National Technical University of AThens.
+> A LaTeX / XeLaTeX / LuaLaTeX PhD thesis template for National Technical University of Athens.
 
 > Forked from https://github.com/kks32/phd-thesis-template
 
+[![Build Status](https://api.travis-ci.org/demanasta/phd-thesis-template.svg)](https://travis-ci.org/demanasta/phd-thesis-template)
 [![License MIT](http://img.shields.io/badge/license-MIT-brightgreen.svg)](license.md)
 [![Version](http://img.shields.io/badge/version-2.3.1_NTUA_el-brightgreen.svg)](https://github.com/kks32/phd-thesis-template/releases/latest)
 
 ## Features added on NTUA version
 
 *   Conforms to the [NTUA PhD guidlines][ntuaguide]
-*   Support Greek language and greek fonts (GFS)
+*   Support Greek language and greek fonts (GFS), choose custom fonts option
 *   Package ``\bicaption`` added to support two languages.
-*   Title page and second page (inside) with advisors and examiners.
-*   Resume/short CV at the end of the template.
-*   Lit of todo notes in Draft mode.
-*   Extended Summary option print extended summary as seperated article. 
+*   Title page and second page (inside) with advisors and examiners.
+*   Resume/short CV at the end of the template.
+*   Lit of todo notes in Draft mode.
+*   Extended Summary option print extended summary as seperated article. 
 
 ## Developer for NTUA version
 *   Demitris G. Anastasiou
 
 Many thanks to Krishna Kumar and the contribution team for the original template of CUED.
 
-Here is the original Readme.md file
 
 --------------------------------------------------------------------------------
+
+Here is the original Readme.md file
 
 CUED PhD thesis template
 ========================
