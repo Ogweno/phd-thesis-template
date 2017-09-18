@@ -1430,6 +1430,7 @@ wish to left align your text}
     \defineExtsumtrue
     % Disable the table of contents, figures, tables, index and nomenclature
     \renewcommand{\maketitle}{}
+    \renewcommand{\maketitlepageIn}{}
     \renewcommand{\tableofcontents}{}
     \renewcommand{\listoffigures}{}
     \renewcommand{\listoftables}{}
