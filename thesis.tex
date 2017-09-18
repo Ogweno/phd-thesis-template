@@ -118,11 +118,11 @@
 % \includeonly{Prologue/prologue}
 % \includeonly{Abstract/abstractgr}
 % \includeonly{Abstract/abstracten}
-% \includeonly{Chapter1/chapter1}
+\includeonly{Chapter1/chapter1}
 % \includeonly{Chapter2/chapter2}
 % \includeonly{Chapter3/chapter3}
 % \includeonly{Chapter4/chapter4}
-\includeonly{Chapter5/chapter5}
+% \includeonly{Chapter5/chapter5}
 % \includeonly{Chapter6/chapter6}
 % \includeonly{Chapter7/chapter7}
 % \includeonly{Chapter8/chapter8}
@@ -133,7 +133,6 @@
 \begin{document}
 
 \frontmatter
-% \renewcommand{\thepage}{\roman{page}}% Roman page numbers
 
 \begin{titlepage}
   \maketitle
@@ -149,6 +148,7 @@
 % \include{Acknowledgement/acknowledgement}
 \include{Abstract/abstractgr}
 \include{Abstract/abstracten}
+
 %% uncomment next line to print extended summary
 %\include{Abstract/extsumfull}
 
@@ -161,14 +161,12 @@
 
 \listoftables
 
+% \printnomenclature[space] space can be set as 2em between symbol and description
 \printnomenclature[6em]
 % for nomenclature run first the following script
 % makeindex thesis.nlo -s nomencl.ist -o thesis.nls
 
 \cleardoublepage
-% \pagestyle{empty}
-% \printnomenclature[space] space can be set as 2em between symbol and description
-% \printnomenclature[3em]
 
 % Print TODO notes for draft mode
 \ifsetDraft

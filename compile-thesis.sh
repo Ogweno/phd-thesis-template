@@ -6,7 +6,7 @@
 compile="compile";
 xelatex="xelatex";
 clean="clean";
-mknomencl="mknomencl";
+#mknomencl="mknomencl";
 
 if test -z "$2"
 then
@@ -40,7 +40,7 @@ else
 	echo "[option]  compile: Compiles the PhD Thesis"
 	echo "[option]  xelatex: Compile the PhD thesis using xelatex"
 	echo "[option]  clean: removes temporary files no filename required"
-	echo "[oprion]  mknomecl: run after the first run for nomeclatures"
+#	echo "[oprion]  mknomecl: run after the first run for nomeclatures"
 	exit
 fi
 fi
@@ -97,18 +97,18 @@ elif [ $1 = $xelatex ]; then
 
 	echo "Success!"
 	exit
-elif [ $1 = $mknomencl ]; then
-	echo "Compiling nlo files...please wait...!"
-	makeindex $filename.nlo -s nomencl.ist -o $filename.nls
-	echo "Success!"
-	exit
+#elif [ $1 = $mknomencl ]; then
+#	echo "Compiling nlo files...please wait...!"
+#	makeindex $filename.nlo -s nomencl.ist -o $filename.nls
+#	echo "Success!"
+#	exit
 else
 	echo "Shell script for compiling the PhD Thesis"
 	echo "Usage: sh ./compile-thesis.sh [OPTIONS] [filename]"
 	echo "[option]  compile: Compiles the PhD Thesis"
 	echo "[option]  xelatex: Compile the PhD thesis using xelatex"
 	echo "[option]  clean: removes temporary files no filename required"
-	echo "[oprion]  mknomencl: run after the first run for nomeclatures"
+#	echo "[option]  mknomencl: run after the first run for nomeclatures"
 	exit
 fi
 

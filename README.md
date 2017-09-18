@@ -20,6 +20,17 @@ NOT an official template
 *   Lit of todo notes in Draft mode.
 *   Extended Summary option print extended summary as seperated article. 
 
+
+### Building: Shell script for PDFLaTeX (Unix/Linux)
+
+Usage: `sh ./compile-thesis.sh [OPTIONS] [filename]` option xelatex added.
+
+[option]  xelatex: Compiles the PhD Thesis using Xelatex
+
+### Building: Using the make file (Unix/Linux)
+
+BUILD_STRATEGY=xelatex change on Makefile
+
 ## Developer for NTUA version
 *   Demitris G. Anastasiou
 
