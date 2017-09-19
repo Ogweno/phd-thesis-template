@@ -8,7 +8,7 @@ NOT an official template
 
 [![Build Status](https://api.travis-ci.org/demanasta/phd-thesis-template.svg)](https://travis-ci.org/demanasta/phd-thesis-template)
 [![License MIT](http://img.shields.io/badge/license-MIT-brightgreen.svg)](license.md)
-[![Version](http://img.shields.io/badge/version-2.3.1_NTUA_el-brightgreen.svg)](https://github.com/kks32/phd-thesis-template/releases/latest)
+[![Version](http://img.shields.io/badge/version-2.3.1_NTUA_el-brightgreen.svg)](https://github.com/demanasta/phd-thesis-template/releases/latest)
 
 ## Features added on NTUA version
 
