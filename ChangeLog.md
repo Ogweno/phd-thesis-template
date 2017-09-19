@@ -1,4 +1,8 @@
 ## Change log
+### 2017/09/19 - Version 2.3.1-NTUA_el
+> Merge pull request #1 from demanasta/NTUA_el
+*   Change to NTUA template version v2.3.1-NTUA_el
+
 ### 2016/04/23 - Version 2.3.1
 > Commit 7e4d9a261dd4e5dbdbf75c642ce2bbaa7e87429b
 *   Fixes #124 Pagestyle options
