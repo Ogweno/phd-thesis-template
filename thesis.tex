@@ -5,7 +5,7 @@
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
-% *********************** See README for more details ************  **************
+% *********************** See README for more details **************************
 % ******************************************************************************
 
 % `a4paper'(The University of Cambridge PhD thesis guidelines recommends a page
@@ -52,7 +52,7 @@
 %            It's a free font.
 %
 % `customfont': Use `customfont' option in the document class and load the
-% package in the preamble.tex
+% package in the preamble.tex. You can use Greek Fonts (GFS)
 %
 % default or leave empty: `Latin Modern' font will be loaded.
 %
@@ -98,9 +98,7 @@
 \fi
 
 % ***********************Extended summary separate en *************************
-% To printout only the titlepage and the abstract with the PhD title and the
-% author name for submission to the Student Registry, use the `abstract' option in
-% the document class.
+% Print only extended summary in English as a seperated article. Use Abstract/Extsumfull Template. 
 
 \ifdefineExtsum
  \includeonly{Abstract/extsumfull}
@@ -143,7 +141,7 @@
   \maketitlepageIn
 \end{titlein}
 
-%\include{Dedication/dedication}
+\include{Dedication/dedication}
 \include{Declaration/declaration}
 \include{Prologue/prologue}
 % \include{Acknowledgement/acknowledgement}

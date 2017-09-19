@@ -24,7 +24,7 @@
 \newcommand\fileversion{2.0}
 \newcommand\filedate{2017/08/29}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{PhDThesisPSnPDFel}[\filedate\space A PhD thesis class file
+\ProvidesClass{Classes/PhDThesisPSnPDFel}[\filedate\space A PhD thesis class file
  by Krishna Kumar updated from Demitris G. Anastasiou (v\fileversion)]
 \typeout{https://github.com/demanasta/phd-thesis-template/}
 
@@ -894,9 +894,18 @@ wish to left align your text}
 % Author (title page)
 \newcommand{\@authortou}{}
 \newcommand{\authortou}[1]{\renewcommand{\@authortou}{#1}}
+
+% Author name in English (ext sum version)
+\newcommand{\@authoren}{}
+\newcommand{\authoren}[1]{\renewcommand{\@authoren}{#1}}
+
 % Diploma
 \newcommand{\@diploma}{}
 \newcommand{\diploma}[1]{\renewcommand{\@diploma}{#1}}
+
+% Diploma in English
+\newcommand{\@diplomaen}{}
+\newcommand{\diplomaen}[1]{\renewcommand{\@diplomaen}{#1}}
 
 % Supervisor (optional)
 \newcommand{\@supervisor}{}
@@ -918,10 +927,17 @@ wish to left align your text}
 \newcommand{\@examinerg}{}
 \newcommand{\examinerg}[1]{\renewcommand{\@examinerg}{#1}}
 
+% Title in English
+\newcommand{\@titleen}{}
+\newcommand{\titleen}[1]{\renewcommand{\@titleen}{#1}}
 
 % Subtitle (optional)
 \newcommand{\@subtitle}{}
 \newcommand{\subtitle}[1]{\renewcommand{\@subtitle}{#1}}
+
+% Subtitle in English (optional)
+\newcommand{\@subtitleen}{}
+\newcommand{\subtitleen}[1]{\renewcommand{\@subtitleen}{#1}}
 
 % The year and term the degree will be officially conferred
 \newcommand{\@degreedate}{\monthname[\the\month]\space\the\year}
@@ -1484,6 +1500,16 @@ wish to left align your text}
 % Separate abstract as per Student Registry guidelines
   \thispagestyle{empty}
   \setsinglecolumn
+  \begin{center}
+  	{\normalsize \underline{Extented Summary of Doctoral Dissertation (e-version)} \par}
+    { \Large {\bfseries {\@titleen}} \par}
+    { \large {\bfseries {\@subtitleen}} \par}
+
+    {\large \vspace*{1em} {\bfseries {\@authoren}} \par}
+    {\normalsize {\@diplomaen} \par}
+%    {\normalsize \vspace*{1em} {The dissertation submitted for the degree of} \par}
+%    {\large {\bfseries {Doctor of Engineering}} \par}
+  \end{center}
 \else
 %% Normal abstract in the thesis
   \cleardoublepage
