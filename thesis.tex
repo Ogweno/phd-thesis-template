@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,index]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,authoryear,print,index]{Classes/PhDThesisPSnPDFel}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -33,6 +33,9 @@
 %
 % `chapter`: This option enables only the specified chapter and it's references
 %  Useful for review and corrections.
+% 
+% `extsum`: To print only extended summary in English. Uncomment include file in main
+% matter and change language in preample file. 
 %
 % ************************* Custom Page Margins ********************************
 %
@@ -49,7 +52,7 @@
 %            It's a free font.
 %
 % `customfont': Use `customfont' option in the document class and load the
-% package in the preamble.tex
+% package in the preamble.tex. You can use Greek Fonts (GFS)
 %
 % default or leave empty: `Latin Modern' font will be loaded.
 %
@@ -75,8 +78,6 @@
 % `PageStyleII': Chapter Name on Even Side (Left Even) in Header. Section Number
 % and Section Name in Header on Odd Side (Right Odd). Page numbering in footer
 
-% Uncomment to change page style
-%\pagestyle{PageStyleII}
 
 % ********************************** Preamble **********************************
 % Preamble: Contains packages and user-defined commands and settings
@@ -93,7 +94,14 @@
 
 \ifdefineAbstract
  \pagestyle{empty}
- \includeonly{Declaration/declaration, Abstract/abstract}
+ \includeonly{Declaration/declaration, Abstract/abstractgr, Abstract/abstracten, CV/cv-prof-gr}
+\fi
+
+% ***********************Extended summary separate en *************************
+% Print only extended summary in English as a seperated article. Use Abstract/Extsumfull Template. 
+
+\ifdefineExtsum
+ \includeonly{Abstract/extsumfull}
 \fi
 
 % ***************************** Chapter Mode ***********************************
@@ -103,20 +111,45 @@
 % To use choose `chapter' option in the document class
 
 \ifdefineChapter
- \includeonly{Chapter3/chapter3}
+% \includeonly{Dedication/dedication}
+% \includeonly{Declaration/declaration}
+% \includeonly{Prologue/prologue}
+% \includeonly{Abstract/abstractgr}
+% \includeonly{Abstract/abstracten}
+% \includeonly{Chapter1/chapter1}
+% \includeonly{Chapter2/chapter2}
+% \includeonly{Chapter3/chapter3}
+% \includeonly{Chapter4/chapter4}
+\includeonly{Chapter5/chapter5}
+% \includeonly{Chapter6/chapter6}
+% \includeonly{Chapter7/chapter7}
+% \includeonly{Chapter8/chapter8}
+% \includeonly{CV/cv-prof-gr}
 \fi
 
 % ******************************** Front Matter ********************************
 \begin{document}
 
 \frontmatter
+% \renewcommand{\thepage}{\roman{page}}% Roman page numbers
 
-\maketitle
+\begin{titlepage}
+  \maketitle
+\end{titlepage}
+
+\begin{titlein}
+  \maketitlepageIn
+\end{titlein}
 
 \include{Dedication/dedication}
 \include{Declaration/declaration}
-\include{Acknowledgement/acknowledgement}
-\include{Abstract/abstract}
+\include{Prologue/prologue}
+% \include{Acknowledgement/acknowledgement}
+\include{Abstract/abstractgr}
+\include{Abstract/abstracten}
+%% uncomment next line to print extended summary
+%\include{Abstract/extsumfull}
+
 
 % *********************** Adding TOC and List of Figures ***********************
 
@@ -126,10 +159,19 @@
 
 \listoftables
 
-% \printnomenclature[space] space can be set as 2em between symbol and description
-%\printnomenclature[3em]
+\printnomenclature[6em]
+% for nomenclature run first the following script
+% makeindex thesis.nlo -s nomencl.ist -o thesis.nls
 
-\printnomenclature
+\cleardoublepage
+% \pagestyle{empty}
+% \printnomenclature[space] space can be set as 2em between symbol and description
+% \printnomenclature[3em]
+
+% Print TODO notes for draft mode
+\ifsetDraft
+  \listoftodos[ToNτο Notes, το Σι το Λα το κτλ.]
+\fi
 
 % ******************************** Main Matter *********************************
 \mainmatter
@@ -141,12 +183,11 @@
 %\include{Chapter5/chapter5}
 %\include{Chapter6/chapter6}
 %\include{Chapter7/chapter7}
-
-
+%\include{Chapter8/chapter8}
 
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
-%\backmatter
+\backmatter
 
 % ********************************** Bibliography ******************************
 \begin{spacing}{0.9}
@@ -157,30 +198,32 @@
 
 \bibliographystyle{apalike}
 %\bibliographystyle{unsrt} % Use for unsorted references  
-%\bibliographystyle{plainnat} % use this to have URLs listed in References
+% \bibliographystyle{plainnat} % use this to have URLs listed in References
 \cleardoublepage
-\bibliography{References/references} % Path to your References.bib file
-
+\bibliography{References/references}%triangleref} % Path to your References.bib file
 
 % If you would like to use BibLaTeX for your references, pass `custombib' as
 % an option in the document class. The location of 'reference.bib' should be
 % specified in the preamble.tex file in the custombib section.
 % Comment out the lines related to natbib above and uncomment the following line.
 
-%\printbibliography[heading=bibintoc, title={References}]
-
+% \bibliography[heading=bibintoc, title={References}]
 
 \end{spacing}
 
 % ********************************** Appendices ********************************
 
 \begin{appendices} % Using appendices environment for more functunality
-
-\include{Appendix1/appendix1}
-\include{Appendix2/appendix2}
-
+  \include{Appendix1/appendix1}
+  \include{Appendix2/appendix2}
 \end{appendices}
+	
+% ********************************** Print your CV *****************************
+%\include{CV/cv-prof-en}
+\cleardoublepage
+\include{CV/cv-prof-gr}
 
+% ********************************** end of document ***************************
 % *************************************** Index ********************************
 \printthesisindex % If index is present
 
